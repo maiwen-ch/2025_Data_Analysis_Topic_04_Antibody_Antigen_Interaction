@@ -3,9 +3,9 @@
 ### *Project overview and guidelines*
 
 -   [Introduction](#introduction)
--   [Objective](#objective)
+-   [Objective](#objectives-and-work-plan)
 -   [Description of datasets](#description-of-datasets)
--   [Literature review](#literature-review)
+-   [Literature review](#literature)
 -   [How to structure your project](#how-to-structure-your-project)
     -   [Project proposal](#project-proposal)
     -   [Project](#project)
