@@ -56,7 +56,7 @@ Amino acid sequences of all proteins in fasta format
 
 ### Download  
 
-!!!**Add link**!!!
+[Download Here!](https://heibox.uni-heidelberg.de/d/ad23ebb995a04b138ee9/)
 
 
 Literature
