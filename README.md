@@ -2,29 +2,7 @@ Topic 04: Antibody - Antigen interactions
 
 ============================================================
 
-
-
-### *Project overview and guidelines*
-
-
-
--   [Introduction](#introduction)
-
--   [Objective](#objective)
-
--   [Description of datasets](#description-of-datasets)
-
--   [Literature review](#literature-review)
-
--   [How to structure your project](#how-to-structure-your-project)
-
-    -   [Project proposal](#project-proposal)
-
-    -   [Project](#project)
-
-
-
-Supervisor
+# Supervisor
 
 ----------
 
@@ -40,18 +18,14 @@ Tutor:
 _Enno Schaefer_ ([enno.schaefer@uni-heidelberg.de](mailto:enno.schaefer@uni-heidelberg.de))
 
 
-
-
-
-Introduction
+# Introduction
 
 ------------
 
-
-
 Antibodies play a crucial role in our immune system. They specifically recognize and bind antigens, thereby helping to differentiate between endogenous molecules and pathogens. While every antibody must be highly specific, their adaptive maturation mechanism theoretically allows the emergence of antibodies that bind to virtually any epitope. Despite being heavily investigated, the rules and constraints governing antibody-antigen (or more specifically paratope-epitope) interaction are still unclear. In this project, you will analyze a dataset experimentally resolved structures of antibody-antigen pairs. You will dive into the fundamentals and the computational analysis of protein-protein interactions to ultimately better understand antibody specificity.
 
-Objectives and work plan
+
+# Objectives and work plan
 
 ------------------------
 
@@ -62,7 +36,7 @@ Objectives and work plan
 1. What kind of important metrics can you identify that are neccessary to design good binders (antibodies)? How would you proceed when tasked with the development of a new antibody in silico that targets a selected antigen?
 
 
-Description of datasets
+# Description of datasets
 
 -----------------------
 
@@ -84,7 +58,7 @@ Mapping from PDB files to uniprot identifiers including additional information o
 https://heibox.uni-heidelberg.de/d/ad23ebb995a04b138ee9/
 
 
-Literature
+# Literature
 
 ----------
 
@@ -98,7 +72,7 @@ Literature
 
 
 
-How to structure your project
+# How to structure your project
 
 -----------------------------
 
