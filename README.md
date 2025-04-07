@@ -1,145 +1,229 @@
-# Topic 02: Thermostability data analysis for protein engineering
+Topic 04: Antibody - Antigen interactions
+
+============================================================
+
+
 
 ### *Project overview and guidelines*
 
+
+
 -   [Introduction](#introduction)
--   [Objective](#objectives-and-work-plan)
+
+-   [Objective](#objective)
+
 -   [Description of datasets](#description-of-datasets)
--   [Literature review](#literature)
+
+-   [Literature review](#literature-review)
+
 -   [How to structure your project](#how-to-structure-your-project)
+
     -   [Project proposal](#project-proposal)
+
     -   [Project](#project)
 
+
+
 Supervisor
+
 ----------
 
-_Prof. Dominik Niopek_  ([dominik.niopek@uni-heidelberg.de](mailto:dominik.niopek@uni-heidelberg.de))  
-_Benedict Wolf_ ([b.wolf@stud.uni-heidelberg.de](mailto:b.wolf@stud.uni-heidelberg.de))   
-_Jan Mathony_  ([jan.mathony@uni-heidelberg.de](mailto:jan.mathony@uni-heidelberg.de)) 
 
-Tutor: 
-_Enno Schäfer_ ([enno.schaefer@stud.uni-heidelberg.de](mailto:enno.schaefer@stud.uni-heidelberg.de)) 
+_Prof. Dominik Niopek_  ([dominik.niopek@uni-heidelberg.de](mailto:dominik.niopek@uni-heidelberg.de))
+
+_Benedict Wolf_ ([benedict.wolf@uni-heidelberg.de](mailto:benedict.wolf@uni-heidelberg.de))
+
+_Jan Mathony_  ([jan.mathony@uni-heidelberg.de](mailto:jan.mathony@uni-heidelberg.de))
+
+Tutor:
+
+_Enno Schaefer_ ([enno.schaefer@uni-heidelberg.de](mailto:enno.schaefer@uni-heidelberg.de))
+
+
+
 
 
 Introduction
-------------
-Proteins are active in certain temperature ranges. When heated above a certain threshold, proteins denature and become (ir-)reversibly inactive. The thermostability of proteins is hence a critical parameter for many applications that most scientists deal with every day, when working with restriction enzymes or DNA polymerases in molecular cloning. Recent high-throughput screenings enabled the unbiased investigation of the thermostabilities for several 10,000 proteins. The resulting datasets link the primary sequence of every protein to its specific thermostability.  
-Such screenings allow us to better understand the determinants of protein folding and protein activity and could guide future protein engineering approaches. In this practical, you are going to explore a large-scale thermostability dataset with the aim to distill the information determining the thermal range in which proteins are active. Starting with a basic exploration of the datasets, you will extend your analysis towards more advanced data analysis techniques and machine learning models to gain a better understanding of protein stability. Finally, we will compare the results in between groups and relate them to other published datasets to identify differences or dataset-specific strengths and weaknesses.
 
+------------
+
+
+
+Antibodies play a crucial role in our immune system. They specifically recognize and bind antigens, thereby helping to differentiate between endogenous molecules and pathogens. While every antibody must be highly specific, their adaptive maturation mechanism theoretically allows the emergence of antibodies that bind to virtually any epitope. Despite being heavily investigated, the rules and constraints governing antibody-antigen (or more specifically paratope-epitope) interaction are still unclear. In this project, you will analyze a dataset experimentally resolved structures of antibody-antigen pairs. You will dive into the fundamentals and the computational analysis of protein-protein interactions to ultimately better understand antibody specificity.
 
 Objectives and work plan
+
 ------------------------
 
-You will work on a large-scale thermostability dataset encompassing the "meltomes" of several species, i.e. the melting temperature of each protein within their proteome. In short, you will get the amino acid sequences of the proteins and their respective melting temperatures as basis for your analysis. You will analyze the data focusing on various scientific question including the following:
+1. How diverse is the dataset? Do you think it covers the space of possible antibody/antigen sequences well?
 
+1. Can you identify any Patterns (sequence, structure) in the interface between antibody and antigen? How variable are the antibodies? What kind of sequences do you observe? Is there a bias in the targeted regions of the Antigens?
 
-- Gain an overview over the dataset. What inter- and intra-species patterns can you observe?
-- Select one species and perform a broad analysis on its proteome
-- Select proteins occurring in multiple species and compare their melting curves. Can you identify trends?
-- What makes proteins gain a higher thermostabilty?
-- Can you identify a subset of features that can help with the prediction of thermostability?
+1. What kind of important metrics can you identify that are neccessary to design good binders (antibodies)? How would you proceed when tasked with the development of a new antibody in silico that targets a selected antigen?
 
-To exemplify the observations and effects in detail, each group can finally focus their analysis on the proteome of one species of their choice.
 
 Description of datasets
+
 -----------------------
 
-### Thermostability Datatables
-**cross-species.csv :**  
-Dataset containing data as fold changes between different temperature thresholds for all species
 
-**uniprot_mapping.txt :**  
-Additional metadata on all available sequences including GO (gene ontology) Terms
+### Datatables
+**ab_ag.tsv :**
+Dataset derived from SAbDab. Contains information on a heavy-light chain pairing in a PDB structure combined with the corresponding antigen
 
-**uniprot_sequences.fasta :**  
-Amino acid sequences of all proteins in fasta format
+**columns.tsv**
+Column description for the `ab_ag.tsv` dataset
 
-### Download  
 
-[Download Here!](https://heibox.uni-heidelberg.de/d/ad23ebb995a04b138ee9/)
+
+**uniprot_data.tsv :**
+Mapping from PDB files to uniprot identifiers including additional information on the proteins.
+
+### Download
+
+https://heibox.uni-heidelberg.de/d/ad23ebb995a04b138ee9/
 
 
 Literature
+
 ----------
 
-Two reviews with background information on the thermostability of proteins and thermostability profiling:
-- Kumar et al. Factors enhancing protein thermostability. (2000). 10.1093/protein/13.3.179
-- Mateus et al. Thermal proteome profiling: unbiased assessment of protein state through heat-induced stability changes. (2016). 10.1186/s12953-017-0122-4.
 
-Key publications referring to the two datasets that you will be using:
-- Jarzab et al., Meltome atlas - thermal proteome stability across the tree of life. (2020). 10.1038/s41592-020-0801-4
-- Leuenberger et al., Cell-wide analysis of protein thermal unfolding reveals determinants of thermostability. (2017). 10.1126/science.aai7825.
 
-A preprint, describing an advanced machine learning approach, using one of the datasets for thermostability prediction:
-- Chu et al. Protein Stability Prediction by Fine-tuning a Protein Language Model on a Mega-scale Dataset. (2023). 10.1101/2023.11.19.567747.
+1. *James Dunbar, Konrad Krawczyk, Jinwoo Leem, Terry Baker, Angelika Fuchs, Guy Georges, Jiye Shi, Charlotte M. Deane, SAbDab: the structural antibody database, Nucleic Acids Research, Volume 42, Issue D1, 1 January 2014, Pages D1140–D1146, https://doi.org/10.1093/nar/gkt1043*
+
+2. *M. Gao, J. Skolnick, Proceedings of the National Academy of Sciences. 121, e2410529121 (2024).*
+
+3. *Chiu ML, Goulet DR, Teplyakov A, Gilliland GL. Antibody Structure and Function: The Basis for Engineering Therapeutics. Antibodies (Basel). 2019 Dec 3;8(4):55. doi: 10.3390/antib8040055. PMID: 31816964; PMCID: PMC6963682.*
 
 
 
 How to structure your project
+
 -----------------------------
 
 ### Project proposal
 
-You first task will be to define a **project proposal**, which should
+
+
+You first task will we to define a **project proposal**, which should
+
 include
 
+
+
 -   summary of literature on this dataset
+
 -   questions you want to address
+
 -   approximate timetable
 
+
+
 You will present this project proposal together with a literature review
+
 on the subject 3 week after the beginning of the semester (10 minute
+
 presentation + 5 minutes discussion).
+
+
 
 ### Project
 
-You project should contain the following elements:
+
+
+You project **MUST** contain the following elements:
+
 - **descriptive statistics** about the datasets
+
 - **graphical representations**
+
 - **dimension reduction** analysis (PCA, clustering or k-means)
+
 - **statistical tests** (t-test, proportion tests etc)
-- **linear regression** analysis, either uni- or multivariate _(this point is optional!)_
+
+- **linear regression** analysis, either uni- or multivariate
+
+
 
 #### Data cleanup
 
+
+
 You will be analyzing multiple data sets together. It is
+
 essential that you explore each dataset and clean it. Cleaning can refer
+
 to many things:
 
+
+
 -   Removing/Imputing missing values
+
 -   Removing low variance columns/rows
+
 -   Removing batch effects
+
 -   Removing outlier samples (only if it is due to technical issues !!)
+
 -   Making sure that data is in the correct format, for example, numbers
+
     should be encoded as numeric and not as characters. Categorical
+
     variables should be factors etc.
+
 -   Re-ordering rows/columns in meaningful and useful ways
+
+
 
 #### Data exploration
 
+
+
 Now that you have cleaned data, explore your data to understand its
+
 structure. Perform basic exploratory data analysis.
 
+
+
 -   Look at the distribution of the overall data, specific samples or
+
     features.
--   Als consider the experimental differences behind the datasets
--   Identify additional useful metadata that can be fetched from public databases
+
 -   Visualize the data distribution
+
 -   Visualize the inter-dependencies (e.g. correlations) among specific samples/features of
+
     interest
+
 -   Check some of your hypothesis like - is something high/low between
+
     two conditions etc
+
+
 
 #### Data reduction
 
+
+
 You have a high dimension matrix, that is, you have way more features
+
  than observations.
 
+
+
 -   Try out methods to reduce the dimensionality of this data.
+
 -   Cluster your samples to identify similar and dis-similar groups
+
 -   Check how well the groups separate based on the features of your
+
     interest
 
+
+
 #### Data modelling
+
+
 
 Use linear regression to evaluate the relation between variables and predicting one using others.
